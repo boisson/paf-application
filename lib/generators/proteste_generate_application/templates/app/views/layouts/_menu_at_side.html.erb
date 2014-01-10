@@ -1,0 +1,29 @@
+<aside>
+  <a href="javascript:void(0)" class="sidebar_switch on_switch ttip_r" title="<%=t('general.terms.hide_sidebar')%>"><%=t('general.terms.hide_sidebar')%></a>
+  <div class="sidebar">
+    <div class="sidebar_inner">
+<!--       <form action="search_page.html" class="input-append" method="post" >
+        <input autocomplete="off" name="query" class="search_query input-medium" size="16" type="text" placeholder="Search..." /><button type="submit" class="btn"><i class="icon-search"></i></button>
+      </form> -->
+      <div id="side_accordion" class="accordion">
+        <div class="accordion-group">
+          <% internal_navigation.each do |menu| %>
+          <div class="accordion-heading">
+            <a href="#collapse<%= menu[:id] %>" data-parent="#side_accordion" data-toggle="collapse" class="accordion-toggle">
+              <i class="<%=menu[:icon]%>"></i> <%= menu[:name] %>
+            </a>
+          </div>
+          <div class="accordion-body collapse in" id="collapse<%= menu[:id] %>">
+            <div class="accordion-inner">
+              <ul class="nav nav-list">
+                <%= build_menu_at_side(menu[:childrens]) %>
+              </ul> 
+            </div>
+          </div>
+          <% end %>
+          <%=yield(:menu_at_side) if content_for?(:menu_at_side) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>

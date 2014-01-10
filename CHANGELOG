@@ -1,0 +1,33 @@
+=== 0.0.10
+  
+  - Cache temporarily disabled
+
+  
+=== 0.0.9
+  
+  - Fix on languages webservice
+
+  
+=== 0.0.8
+  
+  - Languages in webservice
+  - Languages on layout
+
+  
+=== 0.0.7
+  
+  - Fix left menu on collapse
+  - Transport id to menu webservice
+
+  
+=== 0.0.6
+  
+  - Add request for current application
+  - Fix current application in controller
+
+  
+=== 0.0.5
+  
+  - Add main javascript for layout gem
+  - Fix request menus
+

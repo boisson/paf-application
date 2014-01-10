@@ -1,0 +1,6 @@
+<% if flash.now[:success] %>
+p_scaffold.show_message_by_ajax('<%= j bootstrap_flash %>')
+$('#modal-ajax-error').modal('hide')
+<% end %>
+
+$('#modal-ajax-error').html('<%=j render(partial: "user_error_report_form") %>')

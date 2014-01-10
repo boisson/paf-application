@@ -1,0 +1,32 @@
+<div class="modal hide fade" id="about">
+  <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h3><%= t('general.terms.about') %></h3>
+  </div>
+  <div class="modal-body">
+    <%= revision_info %>
+    <table class="table table-condensed table-striped"> 
+      <thead> 
+        <tr> 
+          <th width="90"><%= t('general.terms.changelog.solved_at') %></th>
+          <th><%= t('general.terms.changelog.task_id') %></th>
+          <th><%= t('general.terms.changelog.author') %></th>
+          <th><%= t('general.terms.changelog.solution') %></th>
+        </tr>
+      </thead>
+      <tbody>
+    <% changelog_items.each do |date, changelog_item_grouped| %>
+      <% changelog_item_grouped.each do |changelog_item| %>
+        <tr> 
+            <td><%=Date.parse(changelog_item[0]).strftime("%d/%m/%Y")%></td> 
+            <td><%="##{changelog_item[2]}" unless changelog_item[2].blank?%></td> 
+            <td><%=content_tag(:span, truncate(changelog_item[1], length: 10), title: changelog_item[1])%></td> 
+            <td><%=changelog_item[3]%></td> 
+        </tr> 
+      <% end -%>
+    <% end -%>
+      </tbody>
+    </table>
+  </div>
+
+</div>

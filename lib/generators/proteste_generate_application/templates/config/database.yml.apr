@@ -1,0 +1,13 @@
+development:
+  adapter: sqlserver
+  database: 
+  username: 
+  password: 
+  dataserver: 
+
+production:
+  adapter: sqlserver
+  database: 
+  username: 
+  password: 
+  dataserver: 

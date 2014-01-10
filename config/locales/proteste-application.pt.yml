@@ -1,0 +1,20 @@
+pt:
+  general:
+    headers:
+      modal_import: 'Import data'
+      user_error_report: 'Ocorreu um erro na aplicação'
+    messages:
+      user_error_report_success: 'A mensagem foi enviada corretamente.'
+      user_error_report_exception: 'A mensagem não pode ser enviada pois ocorreu um erro no sistema de envio.'
+      user_error_report: 'Já foi enviado um email para os responsáveis mas caso você queira descrever com suas próprias palavras preencha o campo abaixo e clique em "Enviar e-mail".'
+    terms:
+      revision: 'Ponto no controle de versão <strong>%{revision}</strong>'
+      deploy_release: 'Release <strong>%{release}</strong>'
+      deploy_date: 'Data do deploy <strong>%{date}</strong>'
+      about: 'Informações do aplicativo'
+      changelog:
+        author: 'Autor'
+        task_id: 'Tarefa'
+        solution: 'Solução'
+        solved_at: 'Resolvido em'
+      hide_sidebar: 'Esconder menu lateral'

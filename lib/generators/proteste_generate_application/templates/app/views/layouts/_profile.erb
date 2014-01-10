@@ -1,0 +1,71 @@
+<div class="modal hide fade" id="my_profile">
+  <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h3><%=t('general.actions.user_profile.my_profile')%></h3>
+  </div>
+  <div class="modal-body">
+    <div class="row-fluid">
+      <div class="span3">
+        <%= image_tag(avatar_url(current_user)) %><br />
+        <%= current_user.name %>
+      </div>
+      <div class="span9">
+        <p>
+          <strong><%= Proteste::Auth::User.human_attribute_name :trigram %>:</strong>
+          <%= current_user.trigram %>
+        </p>
+
+        <p>
+          <strong><%= Proteste::Auth::User.human_attribute_name :name %>:</strong>
+          <%= current_user.name %>
+        </p>
+
+        <p>
+          <strong><%= Proteste::Auth::User.human_attribute_name :login %>:</strong>
+          <%= current_user.login %>
+        </p>
+
+        <p>
+          <strong><%= Proteste::Auth::User.human_attribute_name :email %>:</strong>
+          <%= current_user.email %>
+        </p>
+
+        <p>
+          <strong><%= Proteste::Auth::User.human_attribute_name :active_directory %>:</strong>
+          <%= yes_or_no current_user.active_directory %>
+        </p>
+
+        <% unless current_user.company.blank? %>
+        <p>
+          <strong><%=  Proteste::Auth::User.human_attribute_name :company %>:</strong>
+          <%= current_user.company %>
+        </p>
+        <% end -%>
+
+        <% unless current_user.language.blank? %>
+        <p>
+          <strong><%=  Proteste::Auth::User.human_attribute_name :language %>:</strong>
+          <%= current_user.language %>
+        </p>
+        <% end -%>
+
+        <% unless current_user.applications_user_types_users.blank? %>
+        <p>
+          <strong><%=  Proteste::Auth::User.human_attribute_name :applications_with_user_types %>:</strong>
+          <%= current_user.applications_user_types_users.to_sentence %>
+        </p>
+        <% end -%>
+
+        <% unless current_user.groups.blank? %>
+        <p>
+          <strong><%=  Proteste::Auth::User.human_attribute_name :groups %>:</strong>
+          <%= current_user.groups.to_sentence %>
+        </p>
+        <% end -%>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="<%= edit_profile_url %>" class="btn"><%=t('general.actions.user_profile.edit_profile')%></a>
+  </div>
+</div>

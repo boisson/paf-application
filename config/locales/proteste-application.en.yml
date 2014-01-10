@@ -1,0 +1,20 @@
+en:
+  general:
+    headers:
+      modal_import: 'Import data'
+      user_error_report: 'An error occurred'
+    messages:
+      user_error_report_success: 'The message was sent with success'
+      user_error_report_exception: "The message can't be sent because something occurs in the application and cause the error."
+      user_error_report: 'Already sent an email to the account but if you want to describe in your own words fill out the field below and click "Send Email".'
+    terms:
+      revision: 'Point on control version system <strong>%{revision}</strong>'
+      deploy_release: 'Release <strong>%{release}</strong>'
+      deploy_date: 'Date of deploy <strong>%{date}</strong>'
+      about: 'About'
+      changelog:
+        author: 'Author'
+        task_id: 'Task'
+        solution: 'Solution'
+        solved_at: 'Solved at'
+      hide_sidebar: 'Hide sidebar'

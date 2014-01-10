@@ -1,0 +1,13 @@
+development:
+  adapter: sqlserver
+  database: 
+  username: 
+  password: 
+  dataserver: 
+
+test:
+  adapter: sqlserver
+  database: 
+  username: 
+  password: 
+  dataserver: 

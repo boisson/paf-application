@@ -1,0 +1,16 @@
+<%= simple_form_for(@user_notification || :user_notification, 
+  url: proteste_generate_application_user_error_report_path,
+  remote: true,
+  html: {class: 'form-horizontal'}) do |f| %>
+<div class="modal-header">  
+  <h3><%= t('general.headers.user_error_report')%></h3>
+</div>
+<div class="modal-body">
+  <%= t('general.messages.user_error_report')%><br />
+  <%= f.input :message, as: :text, input_html: {rows: 3, class: 'input-xlarge'} %>
+</div>
+<div class="modal-footer">
+  <%= f.submit t('general.actions.send_email'), class: 'btn btn-primary', name: nil %>
+  <a href="javascript:$('#modal-ajax-error').modal('hide')" class="btn"><%= t('general.actions.close_modal') %></a>
+</div>
+<% end -%>

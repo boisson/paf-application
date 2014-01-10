@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h2><%="Client Error report in: #{@url_with_error}"%></h2>
+    <p>The system behaved in an unexpected manner, or some user made what should not.</p>
+    <p>Some action from the user <%=@user.name%>(<%=@user.login%>) cause this error.
+      Below is some information that may help find the error.</p>
+    <div style="background:#eee; padding:10px">
+      <h2>User</h2>
+      <p><%= @user.name %></p>
+      <p><%= @user.login %></p>
+      <p><%= @user.email %></p>
+    </div>
+
+    <% unless @message.blank? %>
+    <div style="background:#eee; padding:10px">
+      <h2>Message writed by client</h2>
+      <code><%= @message %></code>
+    </div>
+    <% end -%>
+
+    <div style="background:#eee; padding:10px">
+      <h2>In session</h2>
+      <code><%= @session_params.inspect %></code>
+    </div>
+    
+  </body>
+</html>
